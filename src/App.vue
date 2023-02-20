@@ -14,11 +14,11 @@ import { ref, computed } from 'vue';
 const vorName = ref('')
 const nachName = ref('')
 const geburtsDatum = ref('')
-const gender = ref ('')
-const name = computed(()=>logPerson())
+const gender = ref('')
+const name = computed(() => logPerson())
 
-function logPerson(){
-  return('Vorname: '+vorName.value + ', Nachname: ' + nachName.value +' , Geburtsdatum: '+ geburtsDatum.value +' , Geschlecht ist:  '+ gender.value)
+function logPerson() {
+  return ('Vorname: ' + vorName.value + ', Nachname: ' + nachName.value + ' , Geburtsdatum: ' + geburtsDatum.value + ' , Geschlecht ist:  ' + gender.value)
 };
 
 //const einkaufsListe =ref([])
@@ -28,55 +28,55 @@ function logPerson(){
 
 
 <template>
+      <div id="cell1">
+        <div>
+          <div>
+            <div id="logo">
+              <Images />
+            </div>
+            <br>
+            <div id="header">
+              <Header />
+            </div>
+            <br>
+            <div>
+              <h2><strong> Dein Name lautet: </strong></h2> {{ name }}
+            </div>
+            <br>
+            <div>
+              <form>
+                <input type="text" name="vorName" placeholder="Vorname" v-model="vorName" required>
+                <input type="text" name="nachName" placeholder="Nachname" v-model="nachName" required>
+                <input type="number" name="geburtsDatum" placeholder="Geburtsdatum" v-model="geburtsDatum" required>
 
-  <main>
-    <div>
-      <div>
-    <div id="logo">
-      <Images/>
-    </div>
-  <br>
-    <div id="header">
-    <Header/>
-  </div>
-  <br>
-    <div>
-      <h2><strong> Dein Name lautet: </strong></h2> {{ name }}
+                <select v-model="gender" required>
+                  <option value="">Bitte wählen</option>
+                  <option value="Male">Männlich</option>
+                  <option value="Female">Weiblich</option>
+                  <option value="Divers">Divers</option>
+                </select>
+              </form>
+            </div>
+            <br>
+            <div>
+              <button type="submit">Submit</button>
+            </div>
+            <br>
+            <div>
+              <Calculator />
+            </div>
+            <br>
+            <div>
+              <Einkaufsliste />
+            </div>
+          </div>
+        </div>
+
+
       </div>
-      <br>
-      <div>
-        <form>
-        <input type="text" name="vorName" placeholder="Vorname" v-model="vorName" required>
-        <input type="text" name="nachName" placeholder="Nachname" v-model="nachName" required>
-        <input type="number" name="geburtsDatum" placeholder="Geburtsdatum" v-model="geburtsDatum" required>
-        
-        <select v-model="gender" required>
-          <option value="">Bitte wählen</option>
-          <option value="Male">Männlich</option>
-          <option value="Female">Weiblich</option>
-          <option value="Divers">Divers</option>
-        </select>
-      </form>
-    </div>
-    <br>
-    <div>
-      <button type="submit">Submit</button>
-    </div>
-    <br>
-    <div>
-      <Calculator/>
-    </div> 
-    <br>
-    <div>
-      <Einkaufsliste/>
-    </div>
-    <div>
-      <Bild/>
-    </div>
- </div>
- </div>
-
-  </main>
+      <div id="cell2">
+        <Bild />
+      </div>
 </template>
 
 <style scoped>
@@ -107,4 +107,12 @@ header {
     flex-wrap: wrap;
   }
 }
+
+#cell2{
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+
 </style>

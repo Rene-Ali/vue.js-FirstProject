@@ -1,32 +1,38 @@
 <template>
     <h2>Mein Cash-Flowrechner</h2>
-    <form v-on:submit.prevent="add">
-        <input type="number" placeholder="Mein Budget" v-model="num1">
-        <input type="number" placeholder="Meine Ausgaben" v-model="num2">
-        <button type="submit">
-            Substract
-        </button>
+    <form>
+        <input type="number" placeholder="Mein Budget" v-model="budget">
+        <button @click="budgetBerechnen()">Budget berechnen</button>
+        <p>Du hast noch xyz Euro zur Verfügung.</p>
     </form>
-    <p>Result: {{ sum }}</p>
 </template>
 
 <script>
-import Einkaufsliste from './Einkaufsliste.vue';
 import { ref } from 'vue';
+/*import Einkaufsliste from './Einkaufsliste.vue';
+
+const restBudget = ref('');
+
+/*function budgetBerechnen(){
+    restBudget = sum.value - budget.value;
+    console.log(restBudget);
+}*/
 
 
-export default {
-    data() {
-      return {
-        num1: '',
-        num2: '',
-        sum: '',
-      };
-    },
-    methods:{
-        add:function() {this.sum = parseInt(this.num1, 10) - parseInt(this.num2, 10);
-    }
-}
-};
+//function alarm(){
+   // alert("You are broke")
+
+
+/*methods:{
+    if ()
+}*/
+
 </script>
-<style></style>
+<style>
+p{
+    text-align: left;
+    padding-top: 10px;
+    background-color: lightgrey;
+    font-weight: 800;
+}
+</style>

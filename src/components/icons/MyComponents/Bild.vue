@@ -1,5 +1,5 @@
 <template>
- <img alt="Organiser" class="bild" src="/src/assets/organiser.jpg" width="auto" height="auto"/>
+ <img alt="Organiser" class="bild" src="/src/assets/organiser.jpg"/>
 </template>
 
 <script>
@@ -9,8 +9,8 @@
 </script>  
 
 <style>
-#bild{
-    float: right;
+.bild{
     height: 100%;
+    width: 100%;
 }
 </style>
